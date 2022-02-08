@@ -11,11 +11,10 @@ Given a stream of transactions received and serialized to JSON like:
 }
 ```
 
-We want to create various filters that trigger when transaction criteria are met.
+Create a filter that takes in user specified paramters of one or more `to`, `from`, `input` and `method_id` to monitor.
 
-Create a filter that can
+Should be able to parse IF, AND, OR conditions and return bool if matching for the following cases
 
-- [ ]  Trigger of “to” is in a list of monitored strings
-- [ ]  Trigger if ”to” OR  from” is in a list of monitored strings
-- [ ]  Trigger if (”to” OR “from”) AND “input” is also matching
-- [ ]  Trigger if ((”to” OR ”from”) AND “input”) OR method_id matches. Where method id is an exact match on the third to 11th string of the input. I.e tx[”input”][2:10] == method_id
+- [ ]  ”to” OR  "from” are in supplied parameters
+- [ ]  if (”to” OR “from”) AND “input” are all in supplied parameters
+- [ ]  if ((”to” OR ”from”) AND “input”) OR method_id matches. Where method id is an exact match on the third to 11th string of the input. I.e tx[”input”][2:10] == method_id
